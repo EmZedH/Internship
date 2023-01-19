@@ -23,3 +23,69 @@ id  name   age  address     salary
 6   KIM    22   SOUTH-HALL  45000.0
 7   JAMES  24   HOUSTON     10000.0
 */
+
+CREATE TABLE DEPARTMENT (ID INT PRIMARY KEY, DEPARTMENT TEXT, EMP_ID INT);
+INSERT INTO DEPARTMENT VALUES (1,'IT BILLING',1),
+(2,'ENGINEERING',2),
+(3,'FINANCE',7);
+SELECT * FROM COMPANY;
+
+/*
+ID  DEPARTMENT   EMP_ID
+--  -----------  ------
+1   IT BILLING   1     
+2   ENGINEERING  2     
+3   FINANCE      7     
+*/
+
+SELECT EMP_ID, name, DEPARTMENT FROM COMPANY CROSS JOIN DEPARTMENT;
+
+/*
+EMP_ID  name   DEPARTMENT 
+------  -----  -----------
+1       PAUL   IT BILLING 
+2       PAUL   ENGINEERING
+7       PAUL   FINANCE    
+1       ALLEN  IT BILLING 
+2       ALLEN  ENGINEERING
+7       ALLEN  FINANCE    
+1       TEDDY  IT BILLING 
+2       TEDDY  ENGINEERING
+7       TEDDY  FINANCE    
+1       MARK   IT BILLING 
+2       MARK   ENGINEERING
+7       MARK   FINANCE    
+1       DAVID  IT BILLING 
+2       DAVID  ENGINEERING
+7       DAVID  FINANCE    
+1       KIM    IT BILLING 
+2       KIM    ENGINEERING
+7       KIM    FINANCE    
+1       JAMES  IT BILLING 
+2       JAMES  ENGINEERING
+7       JAMES  FINANCE   
+*/
+
+SELECT EMP_ID, name, DEPARTMENT FROM COMPANY INNER JOIN DEPARTMENT ON DEPARTMENT.EMP_ID = COMPANY.id;
+
+/*
+EMP_ID  name   DEPARTMENT 
+------  -----  -----------
+1       PAUL   IT BILLING 
+2       ALLEN  ENGINEERING
+7       JAMES  FINANCE    
+*/
+
+SELECT EMP_ID, name, DEPARTMENT FROM COMPANY LEFT OUTER JOIN DEPARTMENT ON DEPARTMENT.EMP_ID = COMPANY.id;
+
+/*
+EMP_ID  name   DEPARTMENT 
+------  -----  -----------
+1       PAUL   IT BILLING 
+2       ALLEN  ENGINEERING
+        TEDDY             
+        MARK              
+        DAVID             
+        KIM               
+7       JAMES  FINANCE    
+*/
