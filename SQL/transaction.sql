@@ -20,9 +20,9 @@ id  c_amount  c_date     c_item.                                                
 */
 
 begin transaction;
-insert into cust_acc (c_amount,c_date,c_item) values (300,'30/1/2023','SSS');                     CUSTOMER WITH C_ID = 1 MAKES A PURCHASE ON 30/1/2023
+insert into cust_acc (c_amount,c_date,c_item) values (300,'30/1/2023','SSS');                    /*CUSTOMER WITH C_ID = 1 MAKES A PURCHASE ON 30/1/2023*/
 
-insert into shop_acc (s_amount,s_date,s_item,c_id) values (300,'30/1/2023','SSS',1);              PURCHASE GETS REFLECTED IN THE SHOPS ACCOUNT
+insert into shop_acc (s_amount,s_date,s_item,c_id) values (300,'30/1/2023','SSS',1);             /*PURCHASE GETS REFLECTED IN THE SHOPS ACCOUNT*/
 commit;
 
 select * from shop_acc;
