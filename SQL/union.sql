@@ -15,7 +15,7 @@ id  name   age  address     salary
 select * from department;
 
 /*
-id  dept         emp_id
+dept_id  dept         emp_id
 --  -----------  ------
 1   IT Billing   1     
 2   Engineering  2     
