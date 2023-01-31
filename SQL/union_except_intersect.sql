@@ -22,11 +22,11 @@ e_id  e_name  c_id
 4     EEE     5   
 */
 
-select * from customer union select c_id, e_name from employee;
+select id,c_name as name from customer union select c_id, e_name from employee;
 
 /*
-id  c_name
---  ------
+id  name
+--  ----
 1   AAA   
 2   BBB   
 3   CCC   
@@ -37,11 +37,11 @@ id  c_name
 8   HHH   
 */
 
-select * from customer union all select c_id, e_name from employee;
+select id,c_name as name from customer union all select c_id, e_name from employee;
 
 /*
-id  c_name
---  ------
+id  name
+--  ----
 1   AAA   
 2   BBB   
 3   CCC   
@@ -54,22 +54,22 @@ id  c_name
 5   EEE   
 */
 
-select * from customer except select c_id, e_name from employee;
+select id,c_name as name from customer except select c_id, e_name from employee;
 
 /*
-id  c_name
---  ------
+id  name
+--  ----
 1   AAA   
 2   BBB   
 4   DDD   
 6   FFF   
 */
 
-select * from customer intersect select c_id, e_name from employee;
+select id,c_name as name from customer intersect select c_id, e_name from employee;
 
 /*
-id  c_name
---  ------
+id  name
+--  ----
 3   CCC   
 5   EEE   
 */
