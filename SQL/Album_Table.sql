@@ -249,3 +249,33 @@ ALBUM_ID
 3       
 */
 
+SELECT * FROM ALBUM;
+
+/*
+SONG_ID  SONG_NAME  MILLISECONDS  ALBUM_ID
+-------  ---------  ------------  --------
+1        AAA        111111        1       
+2        BBB        222222        1       
+3        CCC        333333        2       
+4        DDD        321321        1       
+5        EEE        312312        3       
+6        FFF        100000        2       
+7        GGG        100111        1       
+8        HHH        123111        2       
+*/
+
+UPDATE ALBUM SET MILLISECONDS = MILLISECONDS - 100000 WHERE ALBUM_ID = 8;
+
+/*
+SONG_ID  SONG_NAME  MILLISECONDS  ALBUM_ID
+-------  ---------  ------------  --------
+1        AAA        111111        1       
+2        BBB        222222        1       
+3        CCC        333333        2       
+4        DDD        321321        1       
+5        EEE        312312        3       
+6        FFF        100000        2       
+7        GGG        100111        1       
+8        HHH        23111         2       
+*/
+
